@@ -9,5 +9,6 @@ import { JogadoresSchema } from 'src/interfaces/jogadores/jogadores.schema';
   ],
   providers: [JogadoresService],
   controllers: [JogadoresController],
+  exports: [JogadoresService],
 })
 export class JogadoresModule {}

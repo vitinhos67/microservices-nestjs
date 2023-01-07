@@ -18,5 +18,6 @@ dotenv.config();
   ],
   controllers: [CategoriaController],
   providers: [CategoriaService],
+  exports: [CategoriaService],
 })
 export class CategoriaModule {}

@@ -4,8 +4,8 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import Jogador from 'src/interfaces/jogadores/jogadores.interface';
 import { Jogadores } from 'src/interfaces/jogadores/jogadores.schema';
-import { CriarJogadorDTO } from 'src/dtos/criarJogador.dto';
-import { AtualizarJogadorDTO } from 'src/dtos/atualizarJogador.dto';
+import { CriarJogadorDTO } from 'src/dtos/jogadores/criarJogador.dto';
+import { AtualizarJogadorDTO } from 'src/dtos/jogadores/atualizarJogador.dto';
 @Injectable()
 export class JogadoresService {
   logger = new Logger(JogadoresService.name);
