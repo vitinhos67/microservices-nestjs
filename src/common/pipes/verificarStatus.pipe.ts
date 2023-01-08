@@ -1,5 +1,5 @@
 import { BadRequestException, PipeTransform } from '@nestjs/common';
-import { Desafio } from 'src/interfaces/desafios/desafios.interface';
+import { Desafio } from 'src/modules/desafios/interface/desafios.interface';
 
 export class verificarConteudoStatus implements PipeTransform {
   transform(value: any) {

@@ -2,10 +2,10 @@ import { Injectable, Logger } from '@nestjs/common';
 import { RpcException } from '@nestjs/microservices';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import Jogador from 'src/interfaces/jogadores/jogadores.interface';
-import { Jogadores } from 'src/interfaces/jogadores/jogadores.schema';
-import { CriarJogadorDTO } from 'src/dtos/jogadores/criarJogador.dto';
-import { AtualizarJogadorDTO } from 'src/dtos/jogadores/atualizarJogador.dto';
+import Jogador from 'src/modules/jogadores/interface/jogadores.interface';
+import { Jogadores } from './interface/jogadores.schema';
+import { CriarJogadorDTO } from 'src/modules/jogadores/dtos/criarJogador.dto';
+import { AtualizarJogadorDTO } from './dtos/atualizarJogador.dto';
 @Injectable()
 export class JogadoresService {
   logger = new Logger(JogadoresService.name);

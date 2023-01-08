@@ -7,7 +7,7 @@ import {
   RpcException,
 } from '@nestjs/microservices';
 
-import { CriarJogadorDTO } from 'src/dtos/jogadores/criarJogador.dto';
+import { CriarJogadorDTO } from 'src/modules/jogadores/dtos/criarJogador.dto';
 import { JogadoresService } from './jogadores.service';
 
 @Controller('/api/v1/jogadores')

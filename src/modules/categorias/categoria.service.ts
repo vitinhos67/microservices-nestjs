@@ -2,11 +2,11 @@ import { BadGatewayException, Injectable, Logger } from '@nestjs/common';
 import { RpcException } from '@nestjs/microservices';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Categoria } from '../interfaces/categoria/categoria.schema';
+import { Categoria } from './interface/categoria.schema';
 
 @Injectable()
-export class AppService {
-  logger = new Logger(AppService.name);
+export class CategoriaService {
+  logger = new Logger(CategoriaService.name);
 
   constructor(
     @InjectModel('Categorias') private categoriasModel: Model<Categoria>,
@@ -14,6 +14,14 @@ export class AppService {
 
   async criarCategoria(categoria: Categoria): Promise<Categoria> {
     try {
+      const verificarCategoria = await this.consultarCategoria(
+        categoria.categoria,
+      );
+
+      if (verificarCategoria) {
+        throw new RpcException('A categoria já existe');
+      }
+
       return await this.categoriasModel.create(categoria);
     } catch (error) {
       this.logger.error(JSON.stringify(error.message));

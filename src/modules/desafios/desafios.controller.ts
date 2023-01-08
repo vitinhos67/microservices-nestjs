@@ -1,11 +1,11 @@
 import { Controller, UsePipes, ValidationPipe } from '@nestjs/common';
 import { verificarConteudoStatus } from 'src/common/pipes/verificarStatus.pipe';
 import { DesafiosService } from './desafios.service';
-import { CriarDesafioDTO } from '../../dtos/desafios/criar-desafio.dto';
+import { CriarDesafioDTO } from './dtos/criar-desafio.dto';
 import {
   Desafio,
   DesafioInterface,
-} from '../../interfaces/desafios/desafios.interface';
+} from './interface/desafios.interface';
 import {
   Ctx,
   MessagePattern,

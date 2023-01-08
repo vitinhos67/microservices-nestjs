@@ -1,5 +1,5 @@
-import Jogador from '../jogadores/jogadores.interface';
-
+import Jogador from '../../jogadores/interface/jogadores.interface';
+import { PartidaInterface } from 'src/modules/partidas/interface/Partida.interface';
 export interface DesafioInterface {
   acontece: string;
   status: Desafio;
@@ -8,16 +8,6 @@ export interface DesafioInterface {
   categoria: string; //
   partida?: PartidaInterface;
 }
-export interface PartidaInterface {
-  categoria: string;
-  jogadores: [];
-  resultado: Resultado[];
-}
-
-type Resultado = {
-  set: string;
-  ganhador: string;
-};
 
 export enum Desafio {
   REALIZADA = 'REALIZADA',

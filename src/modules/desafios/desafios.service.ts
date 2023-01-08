@@ -1,16 +1,13 @@
 import { Injectable } from '@nestjs/common';
-import {
-  DesafioInterface,
-  Desafio,
-  PartidaInterface,
-} from '../../interfaces/desafios/desafios.interface';
+import { DesafioInterface, Desafio } from './interface/desafios.interface';
 import { Model } from 'mongoose';
-import { CriarDesafioDTO } from '../../dtos/desafios/criar-desafio.dto';
+import { CriarDesafioDTO } from './dtos/criar-desafio.dto';
 import { InjectModel } from '@nestjs/mongoose';
 import { JogadoresService } from '../jogadores/jogadores.service';
 import { CategoriaService } from '../categorias/categoria.service';
 import { handleError } from 'src/common/utils/error.handler';
 import { RpcException } from '@nestjs/microservices';
+import { PartidaInterface } from '../partidas/interface/Partida.interface';
 @Injectable()
 export class DesafiosService {
   constructor(

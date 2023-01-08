@@ -2,8 +2,8 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import * as dotenv from 'dotenv';
 
-import { CategoriaSchema } from '../../interfaces/categoria/categoria.schema';
-import { JogadoresSchema } from '../../interfaces/jogadores/jogadores.schema';
+import { CategoriaSchema } from './interface/categoria.schema';
+import { JogadoresSchema } from '../jogadores/interface/jogadores.schema';
 import { CategoriaController } from './categoria.controller';
 import { CategoriaService } from './categoria.service';
 

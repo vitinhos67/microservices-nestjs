@@ -3,7 +3,7 @@ import { DesafiosController } from './desafios.controller';
 import { DesafiosService } from './desafios.service';
 
 import { MongooseModule } from '@nestjs/mongoose';
-import { DesafiosSchema } from 'src/interfaces/desafios/Desafios.Schema';
+import { DesafiosSchema } from 'src/modules/desafios/interface/Desafios.Schema';
 import { JogadoresModule } from '../jogadores/jogadores.module';
 import { CategoriaModule } from '../categorias/categoria.module';
 

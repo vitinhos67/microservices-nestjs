@@ -1,4 +1,4 @@
-import Jogador from '../jogadores/jogadores.interface';
+import Jogador from '../../jogadores/interface/jogadores.interface';
 
 export interface CategoriaInterface {
   readonly categoria: string;

@@ -1,25 +1,24 @@
 import { Controller, Logger } from '@nestjs/common';
 import {
   Ctx,
-  EventPattern,
   MessagePattern,
   Payload,
   RmqContext,
   RpcException,
 } from '@nestjs/microservices';
 
-import { AppService } from './app.service';
-import { Categoria } from '../interfaces/categoria/categoria.schema';
+import { CategoriaService } from './categoria.service';
+import { Categoria } from './interface/categoria.schema';
 
 const ackErrors: string[] = ['E11000'];
 
 @Controller()
-export class AppController {
-  logger = new Logger(AppController.name);
+export class CategoriaController {
+  logger = new Logger(CategoriaController.name);
 
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: CategoriaService) {}
 
-  @EventPattern('criar-categoria')
+  @MessagePattern('criar-categoria')
   async criarCategoria(
     @Payload() categoria: Categoria,
     @Ctx() context: RmqContext,
@@ -27,11 +26,11 @@ export class AppController {
     const channel = context.getChannelRef();
     const message = context.getMessage();
     try {
-      await this.appService.criarCategoria(categoria);
+      const criarCategoria = this.appService.criarCategoria(categoria);
       await channel.ack(message);
-    } catch (error) {
-      this.logger.error(JSON.stringify(error.message));
 
+      return criarCategoria;
+    } catch (error) {
       const filter = ackErrors.filter(async (ackErrors) =>
         error.message.includes(ackErrors),
       );
