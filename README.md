@@ -9,18 +9,18 @@
 
 Utilizando o framework nest.js para criar uma aplicação com a arquitetura baseada em micro-serviços
 
-A api ela está sendo transcrevida da API <a href='https://github.com/vitinhos67/sistema-de-jogos-nestjs'>sistemas-de-jogos-nestjs</a> apenas para ser colocada em pratica a arquitetura e adquirir conhecimentos sobre o mesmo utilizando do que é disponivel pelo nest.js
+A API ela está sendo transcrevida da API <a href='https://github.com/vitinhos67/sistema-de-jogos-nestjs'>sistemas-de-jogos-nestjs</a> apenas para ser colocada em pratica a arquitetura e adquirir conhecimentos sobre o mesmo utilizando do que é disponivel pelo nest.js.
 
 
-Para rodar o proketo e necessario ter o rabbit rodando localmente ou atraves de um container
+Para rodar o projeto e necessário ter o rabbit rodando localmente ou através de um container.
 
-caso optar por usar o docker, apenas rode este comando:
+caso optar por usar o docker, apenas utilize este comando:
 
 ```bash
 $ docker run -d --hostname my-rabbit --name rabbit13 -p 15672:15672 -p         5672:5672 -p 25676:25676 rabbitmq:3-management
 ```
 
-As senha e o usuario são <strong>guest</strong> como padrão
+A senha e também o usuario são <strong>guest</strong>, por padrão.
 
 ## Installation
 
