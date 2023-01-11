@@ -28,10 +28,7 @@ export class JogadoresController {
   }
 
   @EventPattern('consultar-jogador')
-  async consultarJogador(
-    @Payload('id') id: string,
-    @Ctx() context: RmqContext,
-  ) {
+  async consultarJogador(@Payload() id: string, @Ctx() context: RmqContext) {
     const channel = context.getChannelRef();
     const message = context.getMessage();
     try {

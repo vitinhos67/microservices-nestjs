@@ -1,15 +1,14 @@
-import Jogador from '../../jogadores/interface/jogadores.interface';
-import { PartidaInterface } from 'src/modules/partidas/interface/Partida.interface';
+import { PartidaInterface } from './Partida.interface';
 export interface DesafioInterface {
   acontece: string;
-  status: Desafio;
-  por: Jogador; //
-  para: Jogador;
+  status: DesafioStatus;
+  por: object; //
+  para: object;
   categoria: string; //
   partida?: PartidaInterface;
 }
 
-export enum Desafio {
+export enum DesafioStatus {
   REALIZADA = 'REALIZADA',
   PENDENTE = 'PENDENTE',
   ACEITO = 'ACEITO',

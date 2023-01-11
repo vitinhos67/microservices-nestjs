@@ -10,7 +10,6 @@ import { CategoriaService } from './categoria.service';
 dotenv.config();
 @Module({
   imports: [
-    MongooseModule.forRoot(process.env.DATABASE_STRING_CONNECTION),
     MongooseModule.forFeature([
       { name: 'Categorias', schema: CategoriaSchema },
     ]),

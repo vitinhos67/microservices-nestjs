@@ -1,5 +1,5 @@
 import { BadRequestException, PipeTransform } from '@nestjs/common';
-import { Desafio } from 'src/modules/desafios/interface/desafios.interface';
+import { DesafioStatus } from 'src/interfaces/Desafio.interface';
 
 export class verificarConteudoStatus implements PipeTransform {
   transform(value: any) {
@@ -10,7 +10,7 @@ export class verificarConteudoStatus implements PipeTransform {
 
     value[0] = value[0].toUpperCase(); // Capitaliza todas as letras
 
-    const status = Object.values(Desafio);
+    const status = Object.values(DesafioStatus);
     const verificarSeKeyExiste = status.find(
       (statusKeys) => statusKeys === value[0],
     ); // Verifica se a letra contem no enum Desafio, Se não, e uma palavra impropia e retorna um erro

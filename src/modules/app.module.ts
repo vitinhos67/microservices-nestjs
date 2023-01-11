@@ -5,14 +5,17 @@ import * as dotenv from 'dotenv';
 import { JogadoresModule } from './jogadores/jogadores.module';
 
 import { CategoriaModule } from './categorias/categoria.module';
-import { DesafiosController } from './desafios/desafios.controller';
-import { DesafiosModule } from './desafios/desafios.module';
-import { PartidasModule } from './partidas/partidas.module';
+
+import { MongooseModule } from '@nestjs/mongoose';
 
 dotenv.config();
 @Module({
-  imports: [CategoriaModule, JogadoresModule, DesafiosModule, PartidasModule],
-  controllers: [DesafiosController],
+  imports: [
+    MongooseModule.forRoot(process.env.DATABASE_STRING_CONNECTION),
+    CategoriaModule,
+    JogadoresModule,
+  ],
+  controllers: [],
   providers: [],
 })
 export class AppModule {}

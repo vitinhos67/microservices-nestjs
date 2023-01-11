@@ -26,7 +26,13 @@ export class JogadoresService {
 
   async consultarJogador(id: string) {
     try {
-      return await this.jogadoresModel.findById(id);
+      const jogador = await this.jogadoresModel.findById(id);
+
+      if (!jogador) {
+        throw new RpcException('Jogador não encontrado');
+      }
+
+      return jogador;
     } catch (error) {
       throw new RpcException(error.message);
     }
